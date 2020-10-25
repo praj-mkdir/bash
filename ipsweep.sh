@@ -12,3 +12,6 @@ done
 echo "example : ./ipsweep.sh 192.192.192. "
 
 fi
+
+#this above script can also be used with the nmap
+#for ip in $(cat iplist.txt) ; nmap -p 80,43 -A $ip & done

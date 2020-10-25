@@ -135,3 +135,10 @@ NAME="Bob"
 # touch "hello/world.txt"
 # echo "Hello World" >> "hello/world.txt"
 # echo "Created hello/world.txt"
+
+
+nam=["1","2","3","4","5"]
+for  i in $nam 
+do 
+    echo "printing the values "
+done
