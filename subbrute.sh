@@ -6,3 +6,4 @@ while read sub ; do
         echo "$sub.$domain" ;
     fi
 done <subdomain.txt
+#result will be 
